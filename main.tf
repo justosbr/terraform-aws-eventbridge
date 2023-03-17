@@ -358,5 +358,5 @@ resource "aws_cloudwatch_event_api_destination" "this" {
   invocation_endpoint              = each.value.invocation_endpoint
   http_method                      = each.value.http_method
   invocation_rate_limit_per_second = lookup(each.value, "invocation_rate_limit_per_second", null)
-  connection_arn                   = aws_cloudwatch_event_connection.this[each.value.name].arn
+  connection_arn                   = aws_cloudwatch_event_connection.this[each.value.connection].arn
 }
